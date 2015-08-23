@@ -20,7 +20,7 @@ class Flyer extends Model
     public static function locatedAt($zip, $street)
     {
         $street = str_replace('-', ' ', $street);
-        return static::where(compact('zip', 'street'))->first();
+        return static::where(compact('zip', 'street'))->firstOrFail();
 
     }
 
@@ -34,8 +34,8 @@ class Flyer extends Model
         return $this->photos()->save($photo);
     }
         
-        public function photos()
-        {
+    public function photos()
+    {
         return $this->hasMany('App\Photo');
-        }
+    }
 }

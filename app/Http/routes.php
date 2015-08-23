@@ -1,9 +1,8 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('flyers/create');
-});
+Route::get('/', 'PagesController@home');
+
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
